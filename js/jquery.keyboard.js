@@ -449,7 +449,7 @@ CSS:
 				.appendTo(container)
 				[(set === 'default') ? 'show' : 'hide']();
 
-			for ( row in keySet ){
+			for ( var row = 0; row < keySet.length; keySet++ ){
 				newRow = $('<div />')
 					.addClass('ui-keyboard-row ui-keyboard-row' + row )
 					.appendTo(newSet);
@@ -458,7 +458,7 @@ CSS:
 				currentSet = $.trim(keySet[row]).replace(/\{(\.?)[\s+]?:[\s+]?(\.?)\}/g,'{$1:$2}');
 				keys = currentSet.split(/\s+/);
 
-				for ( key in keys ) {
+				for ( var key = 0; key < keys.length; key++ ) {
 					// ignore empty keys
 					if (keys[key].length === 0) { continue; }
 
