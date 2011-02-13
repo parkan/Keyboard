@@ -111,9 +111,14 @@ CSS:
 				}
 			});
 
-			// Close with esc key & clicking outside
-			$(document).bind('mousedown keyup', function(e){
-				if (e.type === 'keyup' && e.which === 27 || e.type !== 'keyup'){
+			// Close and save by clicking outside
+			$(document).bind('mousedown', function(e){
+					base.acceptClose(e);
+			});
+
+			// Close and discard with esc
+			$(document).bind('keyup', function(e){
+				if (e.which === 27){
 					base.escClose(e);
 				}
 			});
